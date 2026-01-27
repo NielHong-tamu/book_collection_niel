@@ -1,0 +1,31 @@
+<h1>Book Collection</h1>
+<p>Howdy! This is a book collection made by Niel Hong.</p>
+
+<%= link_to('Add New Book', new_book_path, class: 'action new') %>
+
+<div class = "books index">
+  <h2>Current Book List</h2>
+    <% flash.each do |msg_type, message| %>
+      <div class = "alert alert-<%= msg_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+  <table class="listing" summary="Book List" style="width:50%;">
+    <tr class="header">
+      <th>Book Title</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td class = "actions">
+        <%= link_to('Show Details', book_path(book), class: 'action show') %>
+        <%= link_to('Edit', edit_book_path(book), class: 'action edit') %>
+        <%= link_to('Delete', delete_book_path(book), class: 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
