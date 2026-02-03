@@ -31,6 +31,7 @@ gem "solid_cable"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem 'rexml'
+gem 'rubocop'
 
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
@@ -63,4 +64,5 @@ group :test do
   gem "capybara", '>= 3.26'
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', :require => false
 end
