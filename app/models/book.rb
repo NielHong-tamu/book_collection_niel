@@ -4,7 +4,5 @@ class Book < ApplicationRecord
     validates :price, presence:true, numericality: {only_integer: true}
     validates :published_date, presence: true
 
-    has_many :user
-    belongs_to :author
-    
+
 end
